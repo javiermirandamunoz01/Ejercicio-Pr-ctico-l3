@@ -1,12 +1,22 @@
-let boton = document.getElementById("boton");
-let boton
+
+const btn = document.getElementById("btnArriba");
 
 
-boton.addEventListener("click", function() {  
-    document.getElementById("arriba").scrollIntoView({
-        behavior:"smooth scroll"
-    })
-})
+window.onscroll = function() {
+    if (document.documentElement.scrollTop > 300) {
+        btn.style.display = "block"; 
+    } else {
+        btn.style.display = "none";  
+    }
+};
+
+
+btn.addEventListener("click", function() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth" // 
+    });
+});
 
 
 
